@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { ToastContainer } from 'react-toastify';
 
 import Header from './components/Header';
 import Dashboard from './pages/Dashboard';
@@ -20,6 +21,7 @@ function App() {
             <Route path="/carshop" component={CarShop} />
           </Switch>
         </Router>
+        <ToastContainer autoClose={3000} />
       </PersistGate>
     </Provider>
   );

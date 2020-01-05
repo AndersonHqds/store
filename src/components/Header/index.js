@@ -1,21 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { MdBusiness, MdShoppingCart } from 'react-icons/md';
-import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import GlobalStyle from '~/styles/global';
 import { Avatar, Container, Logo, Navigation } from './styles';
 import Wrapper from '~/components/Wrapper';
-import { saveUserDataRequest } from '~/store/modules/user/actions';
 
 export default function Header() {
-  const user = useSelector(state => state.user);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(saveUserDataRequest());
-  }, [dispatch]);
-
   return (
     <>
       <GlobalStyle />
@@ -29,13 +20,8 @@ export default function Header() {
           </Logo>
           <Navigation>
             <div>
-              <Avatar
-                src={
-                  user.avatar ||
-                  'https://api.adorable.io/avatars/52/abott@adorable.png'
-                }
-              />
-              <span>{user.name || 'loading...'}</span>
+              <Avatar src="https://api.adorable.io/avatars/52/abott@adorable.png" />
+              <span>Anderson Silva</span>
               <NavLink to="carshop">
                 <MdShoppingCart color="#FFF" size={25} />
               </NavLink>

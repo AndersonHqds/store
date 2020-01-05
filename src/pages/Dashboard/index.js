@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import randomColor from 'randomcolor';
 
 import api from '~/services/api';
 import Wrapper from '~/components/Wrapper';
@@ -21,7 +22,7 @@ export default function Dashboard() {
   }, []);
 
   function addToCarShop(product) {
-    // dispatch(addToCarRequest(product));
+    dispatch(addToCarRequest(product));
   }
 
   return (
@@ -31,11 +32,12 @@ export default function Dashboard() {
     >
       {products.map(product => (
         <ProductCard
-          image={product.image}
+          key={product.id}
+          image={product.imageUrl}
           name={product.name}
           price={`R$ ${product.price}`}
-          department={product.departamento}
-          color={product.cor}
+          rate={product.rate}
+          color={randomColor()}
           addToCarShop={() => addToCarShop(product)}
         />
       ))}

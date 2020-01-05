@@ -8,10 +8,22 @@ export default function car(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
       case '@car/ADD_PRODUCT_SUCCESS': {
-        draft.product = [...state.product, ...action.payload.product];
+        draft.product = [...state.product, action.payload.product];
         break;
       }
+      case '@car/UPDATE_QUANTITY_SUCCESS':
+        {
+          const index = draft.product.findIndex(
+            p => p.id === action.payload.product.id
+          );
+
+          if (index >= 0) {
+            draft.product[index].quantity = action.payload.quantity;
+          }
+        }
+        break;
       default:
+        return state;
     }
   });
 }

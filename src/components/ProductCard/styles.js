@@ -29,7 +29,7 @@ export const Details = styled.div`
   }
 `;
 
-export const ColorBox = styled.div`
+export const ColorBox = styled.span`
   width: 20px;
   border: 1px solid #000;
   height: 20px;

@@ -8,7 +8,7 @@ export default function ProductCard({
   name,
   image,
   price,
-  department,
+  rate,
   color,
 }) {
   function addToCar() {
@@ -37,8 +37,8 @@ export default function ProductCard({
           {price}
         </p>
         <p>
-          <b>Departamento: </b>
-          {department}
+          <b>Avaliação: </b>
+          {rate}
         </p>
         <p>
           <b>Cor: </b>
@@ -55,7 +55,7 @@ ProductCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string,
   price: PropTypes.string.isRequired,
-  department: PropTypes.string.isRequired,
+  rate: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
 };
 

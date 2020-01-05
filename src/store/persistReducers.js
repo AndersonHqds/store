@@ -6,7 +6,7 @@ export default reducers => {
     {
       key: 'kabum',
       storage,
-      whitelist: ['user'],
+      whitelist: ['car'],
     },
     reducers
   );

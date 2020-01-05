@@ -1,7 +1,23 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { useSelector } from 'react-redux';
+import { Container, Title, Board, Msg, Product } from './styles';
 
 export default function CarShop() {
-  return <div>Car Shop</div>;
+  const products = useSelector(state => state.car.product);
+  return (
+    <Container>
+      <Title>Carrinho</Title>
+      {products.length > 0 ? (
+        <Board>
+          {products.map(product => (
+            <Product key={product.id}>{product.name}</Product>
+          ))}
+        </Board>
+      ) : (
+        <Msg>Nenhum produto adicionado no momento</Msg>
+      )}
+      {}
+    </Container>
+  );
 }
