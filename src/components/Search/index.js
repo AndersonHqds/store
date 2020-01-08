@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Container } from './styles';
 
 export default function Search({ products, onSearch }) {
   function filterText(event) {
@@ -19,7 +18,6 @@ export default function Search({ products, onSearch }) {
       reset = false;
     }
     onSearch(productsFound, reset);
-    console.log(productsFound);
   }
 
   return (
