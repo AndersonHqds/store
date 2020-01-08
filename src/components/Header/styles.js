@@ -27,6 +27,9 @@ export const Navigation = styled.div`
     justify-content: space-between;
     min-width: 200px;
     color: #fff;
+    b {
+      color: #fff;
+    }
   }
 `;
 

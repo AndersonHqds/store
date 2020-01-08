@@ -18,3 +18,17 @@ export function addToCarSuccess(product) {
     payload: { product },
   };
 }
+
+export function removeFromCarRequest(product) {
+  return {
+    type: '@car/REMOVE_PRODUCT',
+    product,
+  };
+}
+
+export function removeFromCarSuccess(product) {
+  return {
+    type: '@car/REMOVE_PRODUCT_SUCCESS',
+    payload: { product },
+  };
+}

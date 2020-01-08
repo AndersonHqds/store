@@ -21,7 +21,7 @@ function App() {
             <Route path="/carshop" component={CarShop} />
           </Switch>
         </Router>
-        <ToastContainer autoClose={3000} />
+        <ToastContainer autoClose={1000} />
       </PersistGate>
     </Provider>
   );

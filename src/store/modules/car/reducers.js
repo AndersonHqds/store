@@ -11,17 +11,28 @@ export default function car(state = INITIAL_STATE, action) {
         draft.product = [...state.product, action.payload.product];
         break;
       }
-      case '@car/UPDATE_QUANTITY_SUCCESS':
-        {
-          const index = draft.product.findIndex(
-            p => p.id === action.payload.product.id
-          );
+      case '@car/UPDATE_QUANTITY_SUCCESS': {
+        const index = draft.product.findIndex(
+          p => p.id === action.payload.product.id
+        );
 
-          if (index >= 0) {
-            draft.product[index].quantity = action.payload.quantity;
-          }
+        if (index >= 0) {
+          draft.product[index].quantity = action.payload.quantity;
         }
         break;
+      }
+
+      case '@car/REMOVE_PRODUCT_SUCCESS': {
+        const index = draft.product.findIndex(
+          p => p.id === action.payload.product.id
+        );
+
+        if (index >= 0) {
+          draft.product.splice(index, 1);
+        }
+        break;
+      }
+
       default:
         return state;
     }

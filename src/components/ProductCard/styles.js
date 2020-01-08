@@ -9,11 +9,11 @@ export const Container = styled.div`
   border: 1px solid #bdbdbd;
   margin: 10px 0;
   background: rgba(255, 255, 255, 0.5);
-`;
 
-export const Image = styled.img`
-  height: 200px;
-  width: 100%;
+  img {
+    height: 200px;
+    width: 100%;
+  }
 `;
 
 export const Details = styled.div`
