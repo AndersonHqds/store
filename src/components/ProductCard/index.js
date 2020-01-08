@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Image, Details, ColorBox, AddButton } from './styles';
+import { Container, Details, ColorBox, AddButton } from './styles';
+
+import Image from '~/components/Image';
 
 export default function ProductCard({
   addToCarShop,
@@ -17,16 +19,7 @@ export default function ProductCard({
 
   return (
     <Container>
-      <Image
-        src={
-          image || 'https://www.freeiconspng.com/uploads/no-image-icon-4.png'
-        }
-        onError={e => {
-          e.target.error = null;
-          e.target.src =
-            'https://www.freeiconspng.com/uploads/no-image-icon-4.png';
-        }}
-      />
+      <Image src={image} />
       <Details>
         <p>
           <b>Nome: </b>

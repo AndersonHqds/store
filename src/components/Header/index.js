@@ -1,12 +1,14 @@
 import React from 'react';
 import { MdBusiness, MdShoppingCart } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import GlobalStyle from '~/styles/global';
 import { Avatar, Container, Logo, Navigation } from './styles';
 import Wrapper from '~/components/Wrapper';
 
 export default function Header() {
+  const quantity = useSelector(state => state.car.product.length);
   return (
     <>
       <GlobalStyle />
@@ -24,6 +26,7 @@ export default function Header() {
               <span>Anderson Silva</span>
               <NavLink to="carshop">
                 <MdShoppingCart color="#FFF" size={25} />
+                <b>{quantity}</b>
               </NavLink>
             </div>
           </Navigation>

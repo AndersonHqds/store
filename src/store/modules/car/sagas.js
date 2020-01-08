@@ -1,6 +1,10 @@
 import { select, put, takeLatest, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
-import { addToCarSuccess, updateQuantitySuccess } from './actions';
+import {
+  addToCarSuccess,
+  updateQuantitySuccess,
+  removeFromCarSuccess,
+} from './actions';
 
 function* addToCar({ product }) {
   try {
@@ -21,10 +25,25 @@ function* addToCar({ product }) {
 
       yield put(addToCarSuccess(data));
     }
-    toast.success('Produto adicionado com sucesso');
   } catch (error) {
     toast.error('Um erro ocorreu ao adicionar o produto ao carrinho');
   }
 }
 
-export default all([takeLatest('@car/ADD_PRODUCT', addToCar)]);
+function* removeFromCar({ product }) {
+  try {
+    const value = product.quantity - 1;
+    if (value > 0) {
+      yield put(updateQuantitySuccess(product, value));
+    } else {
+      yield put(removeFromCarSuccess(product));
+    }
+  } catch (error) {
+    toast.error('Um erro ocorreu ao diminuir quantidade do produto');
+  }
+}
+
+export default all([
+  takeLatest('@car/ADD_PRODUCT', addToCar),
+  takeLatest('@car/REMOVE_PRODUCT', removeFromCar),
+]);
