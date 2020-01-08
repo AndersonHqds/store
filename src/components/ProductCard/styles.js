@@ -50,3 +50,5 @@ export const AddButton = styled.button`
     opacity: 0.8;
   }
 `;
+
+AddButton.displayName = 'button';

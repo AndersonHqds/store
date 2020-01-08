@@ -5,6 +5,7 @@ import { Container, Title, Board, Msg, Product } from './styles';
 
 export default function CarShop() {
   const products = useSelector(state => state.car.product);
+
   return (
     <Container>
       <Title>Carrinho</Title>
