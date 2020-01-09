@@ -58,6 +58,7 @@ export default function Dashboard() {
               price={`R$ ${product.price}`}
               rate={product.rate}
               color={randomColor()}
+              id={product.id}
               addToCarShop={() => addToCarShop(product)}
             />
           ))

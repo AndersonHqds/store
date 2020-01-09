@@ -8,6 +8,7 @@ export default function Search({ products, onSearch }) {
     if (event.target.value.trim() !== '') {
       productsFound = products.filter(
         product =>
+          Number(product.id) === Number(event.target.value) ||
           product.name
             .toLowerCase()
             .includes(event.target.value.toLowerCase()) ||

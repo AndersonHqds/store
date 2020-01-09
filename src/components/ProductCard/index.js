@@ -12,6 +12,7 @@ export default function ProductCard({
   price,
   rate,
   color,
+  id,
 }) {
   function addToCar() {
     addToCarShop();
@@ -21,6 +22,10 @@ export default function ProductCard({
     <Container>
       <Image src={image} />
       <Details>
+        <p>
+          <b>ID: </b>
+          {id}
+        </p>
         <p>
           <b>Nome: </b>
           {name}
@@ -50,6 +55,7 @@ ProductCard.propTypes = {
   price: PropTypes.string.isRequired,
   rate: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 ProductCard.defaultProps = {
