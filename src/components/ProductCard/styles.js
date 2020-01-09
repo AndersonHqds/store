@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 350px;
   align-items: space-around;
   border: 1px solid #bdbdbd;
-  margin: 10px 0;
+  margin: 10px 20px;
   background: rgba(255, 255, 255, 0.5);
 
   img {

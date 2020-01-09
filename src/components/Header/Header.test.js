@@ -7,6 +7,8 @@ import Header from './index';
 
 configure({ adapter: new Adapter() });
 
+jest.mock('react-redux');
+
 describe('Header component', () => {
   const wrapper = shallow(<Header />);
 

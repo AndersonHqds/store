@@ -3,7 +3,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { mount, configure } from 'enzyme';
 
 import ProductCard from './index';
-import { AddButton, Image, Details, ColorBox } from './styles';
+import { AddButton, Details, ColorBox } from './styles';
 
 configure({ adapter: new Adapter() });
 
@@ -26,12 +26,7 @@ describe('ProductCard Component', () => {
   });
 
   it('Should render correctly', () => {
-    expect(wrapper.find(Image).props().src).toBe(props.image);
     expect(wrapper.find(Details).length).toBe(1);
     expect(wrapper.find(ColorBox).props().color).toBe(props.color);
-    wrapper.setProps({ image: null });
-    expect(wrapper.find(Image).props().src).toBe(
-      'https://www.freeiconspng.com/uploads/no-image-icon-4.png'
-    );
   });
 });

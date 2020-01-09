@@ -8,6 +8,8 @@ import { Msg } from './styles';
 
 configure({ adapter: new Adapter() });
 
+jest.mock('react-redux');
+
 describe('CarShop Page', () => {
   const spy = jest.spyOn(redux, 'useSelector');
   spy.mockReturnValue({ car: { product: [] } });

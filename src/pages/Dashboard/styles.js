@@ -6,7 +6,7 @@ export const ProductsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 50px 0px;
   @media (max-width: 550px) {
     justify-content: center;
